@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OwmvmjTTW1l3Iaf/gwp1n7zPijfXJPAW545BAdGv/ndRJMDbQX/Csgi1b0dwgBEAL6Ks8Aht+O3w0rEvlPgAGQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\İlker\\Source\\Repos\\GoogleToWhatsApp\\GoogleToWhatsApp\\GoogleToWhatsApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\İlker\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
