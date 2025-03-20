@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GoogleToWhatsApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf117f9aa0c83f45a7a93328d39664f7dbacea48")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b62e54d41c5dfb7c6108d08e1cfdf1c7606fc7b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("GoogleToWhatsApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GoogleToWhatsApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -14,8 +14,9 @@ namespace GoogleToWhatsApp
     {
         private const string GoogleApiKey = "AIzaSyAV6EXUawGrlYjdyCjE-HZ_ZiP8Ab4afo0";
         private const string GooglePlacesUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
-        private List<string> phoneNumbers = new List<string>();
-        private List<string> emails = new List<string>();
+        //private List<string> phoneNumbers = new List<string>();
+        //private List<string> emails = new List<string>();
+        //private List<string> adress = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -23,23 +24,25 @@ namespace GoogleToWhatsApp
         }
         private void InitializeDataGridView()
         {
-            dataGridView1.ColumnCount = 3;
-            dataGridView1.Columns[0].Name = "Ýsim";
-            dataGridView1.Columns[1].Name = "Telefon";
-            dataGridView1.Columns[2].Name = "Email";
+            dataGridView1.ColumnCount = 5;
+            dataGridView1.Columns[0].Name = "#";
+            dataGridView1.Columns[1].Name = "Ýsim";
+            dataGridView1.Columns[2].Name = "Telefon";
+            dataGridView1.Columns[3].Name = "Email";
+            dataGridView1.Columns[4].Name = "Adres";
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private async void btnFetchData_Click(object sender, EventArgs e)
         {
 
-            string location = "41.0082,28.9784"; // Ýstanbul koordinatlarý
-            string radius = "5000"; // 5 km çapýnda ara
+            string location = "41.02437313021693, 29.15433980983167"; // Ýstanbul koordinatlarý
+            string radius = "500000"; // 5 km çapýnda ara
             string type = txtExplanation.Text; // Kategori
 
             string url = $"{GooglePlacesUrl}?location={location}&radius={radius}&type={type}&key={GoogleApiKey}";
             using (HttpClient client = new HttpClient())
             {
-                string response = await client.GetStringAsync(url);
+               string response = await client.GetStringAsync(url);
                 if (response.Contains("REQUEST_DENIED"))
                 {
                     MessageBox.Show("Google API anahtarýnýz geçersiz veya yetkiniz yok.", "API Hatasý 3", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -54,18 +57,22 @@ namespace GoogleToWhatsApp
             JArray results = (JArray)json["results"];
 
             dataGridView1.Rows.Clear();
-            phoneNumbers.Clear();
-            emails.Clear();
-
+            //phoneNumbers.Clear();
+            //emails.Clear();
+            //adress.Clear();
+            int count = 1;
             foreach (var place in results)
             {
                 string name = place["name"]?.ToString();
                 string phoneNumber = place["formatted_phone_number"]?.ToString() ?? "Bilinmiyor";
                 string email = place["email"]?.ToString() ?? "Bilinmiyor";
+                string adres = place["vicinity"]?.ToString() ?? "bilinmiyor";
 
-                phoneNumbers.Add(phoneNumber);
-                emails.Add(email);
-                dataGridView1.Rows.Add(name, phoneNumber, email);
+                //phoneNumbers.Add(phoneNumber);
+                //emails.Add(email);
+                //adress.Add(adres);
+                dataGridView1.Rows.Add(count, name, phoneNumber, email,adres);
+                count++;
             }
         }
         private void btnExportToExcel_Click(object sender, EventArgs e)
