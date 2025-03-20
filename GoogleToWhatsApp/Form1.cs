@@ -42,7 +42,7 @@ namespace GoogleToWhatsApp
                 string response = await client.GetStringAsync(url);
                 if (response.Contains("REQUEST_DENIED"))
                 {
-                    MessageBox.Show("Google API anahtarýnýz geçersiz veya yetkiniz yok.", "API Hatasý", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Google API anahtarýnýz geçersiz veya yetkiniz yok.", "API Hatasý 2", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 ParseGoogleResponse(response);

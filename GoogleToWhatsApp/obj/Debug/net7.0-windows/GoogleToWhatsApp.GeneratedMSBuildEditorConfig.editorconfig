@@ -14,4 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GoogleToWhatsApp
-build_property.ProjectDir = C:\Users\İlker\Source\Repos\GoogleToWhatsApp\GoogleToWhatsApp\
+build_property.ProjectDir = D:\Users\ilker.mutlu\Source\Repos\GoogleToWhatsApp\GoogleToWhatsApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
