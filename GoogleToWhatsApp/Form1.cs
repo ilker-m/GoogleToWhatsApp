@@ -24,7 +24,7 @@ namespace GoogleToWhatsApp
         private void InitializeDataGridView()
         {
             dataGridView1.ColumnCount = 3;
-            dataGridView1.Columns[0].Name = "›sim";
+            dataGridView1.Columns[0].Name = "√ùsim";
             dataGridView1.Columns[1].Name = "Telefon";
             dataGridView1.Columns[2].Name = "Email";
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -32,8 +32,8 @@ namespace GoogleToWhatsApp
         private async void btnFetchData_Click(object sender, EventArgs e)
         {
 
-            string location = "41.0082,28.9784"; // ›stanbul koordinatlar˝
-            string radius = "5000"; // 5 km Áap˝nda ara
+            string location = "41.0082,28.9784"; // √ùstanbul koordinatlar√Ω
+            string radius = "5000"; // 5 km √ßap√Ωnda ara
             string type = txtExplanation.Text; // Kategori
 
             string url = $"{GooglePlacesUrl}?location={location}&radius={radius}&type={type}&key={GoogleApiKey}";
@@ -42,7 +42,7 @@ namespace GoogleToWhatsApp
                 string response = await client.GetStringAsync(url);
                 if (response.Contains("REQUEST_DENIED"))
                 {
-                    MessageBox.Show("Google API anahtar˝n˝z geÁersiz veya yetkiniz yok.", "API Hatas˝ 2", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Google API anahtar√Ωn√Ωz ge√ßersiz veya yetkiniz yok.", "API Hatas√Ω 3", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 ParseGoogleResponse(response);
@@ -72,7 +72,7 @@ namespace GoogleToWhatsApp
         {
             using (StreamWriter writer = new StreamWriter("contacts.csv"))
             {
-                writer.WriteLine("›sim,Telefon,Email");
+                writer.WriteLine("√ùsim,Telefon,Email");
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (row.Cells[0].Value != null && row.Cells[1].Value != null && row.Cells[2].Value != null)
@@ -81,7 +81,7 @@ namespace GoogleToWhatsApp
                     }
                 }
             }
-            MessageBox.Show("Veriler ba˛ar˝yla Excel'e aktar˝ld˝.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Veriler ba√æar√Ωyla Excel'e aktar√Ωld√Ω.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnSendWhatsApp_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace GoogleToWhatsApp
                 if (row.Cells[1].Value != null && row.Cells[1].Value.ToString() != "Bilinmiyor")
                 {
                     string phone = row.Cells[1].Value.ToString();
-                    string message = "Merhaba, i˛letmeniz hakk˝nda bilgi almak istiyorum.";
+                    string message = "Merhaba, i√æletmeniz hakk√Ωnda bilgi almak istiyorum.";
                     string url = $"https://api.whatsapp.com/send?phone={phone}&text={Uri.EscapeDataString(message)}";
                     System.Diagnostics.Process.Start(url);
                 }
