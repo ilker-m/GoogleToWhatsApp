@@ -28,77 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnFetchData = new System.Windows.Forms.Button();
-            this.btnSendWhatsApp = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnExportToExcel = new System.Windows.Forms.Button();
-            this.txtExplanation = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            btnFetchData = new Button();
+            btnSendWhatsApp = new Button();
+            dataGridView1 = new DataGridView();
+            btnExportToExcel = new Button();
+            txtCategory = new TextBox();
+            txtLocation = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // btnFetchData
             // 
-            this.btnFetchData.Location = new System.Drawing.Point(25, 353);
-            this.btnFetchData.Name = "btnFetchData";
-            this.btnFetchData.Size = new System.Drawing.Size(263, 75);
-            this.btnFetchData.TabIndex = 0;
-            this.btnFetchData.Text = "Fetch Data";
-            this.btnFetchData.UseVisualStyleBackColor = true;
-            this.btnFetchData.Click += new System.EventHandler(this.btnFetchData_Click);
+            btnFetchData.Location = new Point(25, 385);
+            btnFetchData.Name = "btnFetchData";
+            btnFetchData.Size = new Size(239, 44);
+            btnFetchData.TabIndex = 0;
+            btnFetchData.Text = "Fetch Data";
+            btnFetchData.UseVisualStyleBackColor = true;
+            btnFetchData.Click += btnFetchData_Click;
             // 
             // btnSendWhatsApp
             // 
-            this.btnSendWhatsApp.Location = new System.Drawing.Point(567, 353);
-            this.btnSendWhatsApp.Name = "btnSendWhatsApp";
-            this.btnSendWhatsApp.Size = new System.Drawing.Size(263, 75);
-            this.btnSendWhatsApp.TabIndex = 1;
-            this.btnSendWhatsApp.Text = "Send WhatsApp";
-            this.btnSendWhatsApp.UseVisualStyleBackColor = true;
-            this.btnSendWhatsApp.Click += new System.EventHandler(this.btnSendWhatsApp_Click);
+            btnSendWhatsApp.Location = new Point(567, 385);
+            btnSendWhatsApp.Name = "btnSendWhatsApp";
+            btnSendWhatsApp.Size = new Size(240, 44);
+            btnSendWhatsApp.TabIndex = 1;
+            btnSendWhatsApp.Text = "Send WhatsApp";
+            btnSendWhatsApp.UseVisualStyleBackColor = true;
+            btnSendWhatsApp.Click += btnSendWhatsApp_Click;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 42);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(805, 305);
-            this.dataGridView1.TabIndex = 2;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(25, 74);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(782, 305);
+            dataGridView1.TabIndex = 2;
             // 
             // btnExportToExcel
             // 
-            this.btnExportToExcel.Location = new System.Drawing.Point(298, 353);
-            this.btnExportToExcel.Name = "btnExportToExcel";
-            this.btnExportToExcel.Size = new System.Drawing.Size(263, 75);
-            this.btnExportToExcel.TabIndex = 3;
-            this.btnExportToExcel.Text = "Export To Excel";
-            this.btnExportToExcel.UseVisualStyleBackColor = true;
-            this.btnExportToExcel.Click += new System.EventHandler(this.btnExportToExcel_Click);
+            btnExportToExcel.Location = new Point(298, 385);
+            btnExportToExcel.Name = "btnExportToExcel";
+            btnExportToExcel.Size = new Size(238, 44);
+            btnExportToExcel.TabIndex = 3;
+            btnExportToExcel.Text = "Export To Excel";
+            btnExportToExcel.UseVisualStyleBackColor = true;
+            btnExportToExcel.Click += btnExportToExcel_Click;
             // 
-            // txtExplanation
+            // txtCategory
             // 
-            this.txtExplanation.Location = new System.Drawing.Point(25, 13);
-            this.txtExplanation.Name = "txtExplanation";
-            this.txtExplanation.Size = new System.Drawing.Size(805, 23);
-            this.txtExplanation.TabIndex = 4;
+            txtCategory.Location = new Point(110, 13);
+            txtCategory.Name = "txtCategory";
+            txtCategory.Size = new Size(697, 23);
+            txtCategory.TabIndex = 4;
+            // 
+            // txtLocation
+            // 
+            txtLocation.Location = new Point(110, 45);
+            txtLocation.Name = "txtLocation";
+            txtLocation.Size = new Size(697, 23);
+            txtLocation.TabIndex = 5;
+            txtLocation.Text = "41.02437313021693, 29.15433980983167";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(25, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(55, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Category";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(27, 53);
+            label2.Name = "label2";
+            label2.Size = new Size(53, 15);
+            label2.TabIndex = 7;
+            label2.Text = "Location";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 450);
-            this.Controls.Add(this.txtExplanation);
-            this.Controls.Add(this.btnExportToExcel);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnSendWhatsApp);
-            this.Controls.Add(this.btnFetchData);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(828, 450);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(txtLocation);
+            Controls.Add(txtCategory);
+            Controls.Add(btnExportToExcel);
+            Controls.Add(dataGridView1);
+            Controls.Add(btnSendWhatsApp);
+            Controls.Add(btnFetchData);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -107,6 +138,9 @@
         private Button btnSendWhatsApp;
         private DataGridView dataGridView1;
         private Button btnExportToExcel;
-        private TextBox txtExplanation;
+        private TextBox txtCategory;
+        private TextBox txtLocation;
+        private Label label1;
+        private Label label2;
     }
 }

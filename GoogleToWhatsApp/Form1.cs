@@ -12,7 +12,7 @@ namespace GoogleToWhatsApp
 {
     public partial class Form1 : Form
     {
-        private const string GoogleApiKey = "AIzaSyAV6EXUawGrlYjdyCjE-HZ_ZiP8Ab4afo0";
+        private const string GoogleApiKey = "API_KEY";
         private const string GooglePlacesUrl = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
         //private List<string> phoneNumbers = new List<string>();
         //private List<string> emails = new List<string>();
@@ -26,8 +26,8 @@ namespace GoogleToWhatsApp
         {
             dataGridView1.ColumnCount = 5;
             dataGridView1.Columns[0].Name = "#";
-            dataGridView1.Columns[1].Name = "Ýsim";
-            dataGridView1.Columns[2].Name = "Telefon";
+            dataGridView1.Columns[1].Name = "Name";
+            dataGridView1.Columns[2].Name = "Phone";
             dataGridView1.Columns[3].Name = "Email";
             dataGridView1.Columns[4].Name = "Adres";
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -35,9 +35,9 @@ namespace GoogleToWhatsApp
         private async void btnFetchData_Click(object sender, EventArgs e)
         {
 
-            string location = "41.02437313021693, 29.15433980983167"; // Ýstanbul koordinatlarý
+            string location = txtLocation.Text; // Ýstanbul koordinatlarý
             string radius = "500000"; // 5 km çapýnda ara
-            string type = txtExplanation.Text; // Kategori
+            string type = txtCategory.Text; // Kategori
 
             string url = $"{GooglePlacesUrl}?location={location}&radius={radius}&type={type}&key={GoogleApiKey}";
             using (HttpClient client = new HttpClient())
